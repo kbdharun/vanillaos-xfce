@@ -10,8 +10,25 @@ modules:
 - name: init-setup
   type: shell
   commands:
-  - lpkg --unlock
-  - apt-get update
+  - echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"' > /etc/environment
+  - sed -i '4,10d' /etc/profile
+  - apt update
+  - apt upgrade -y
+  - apt clean
+  - apt-mark hold snapd gnome-software-plugin-snap
+  - apt -y install squashfs-tools minisign
+
+- name: vanilla-tools
+  type: shell
+  source:
+    type: tar
+    url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/continuous/vanilla-tools.tar.gz
+  commands:
+  - mkdir -p /usr/bin
+  - cp /sources/vanilla-tools/lpkg /usr/bin/lpkg
+  - cp /sources/vanilla-tools/cur-gpu /usr/bin/cur-gpu
+  - chmod +x /usr/bin/lpkg
+  - chmod +x /usr/bin/cur-gpu
 
 # Start custom actions
 
