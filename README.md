@@ -2,7 +2,7 @@
 
 Containerfile for building a Vanilla OS Desktop image fox XFCE.
 
-This image is based on top of [`vanillaos/desktop`](https://github.com/Vanilla-OS/desktop-image/pkgs/container/desktop) and offers the default
+This image is based on top of [`vanillaos/core`](https://github.com/Vanilla-OS/desktop-image/pkgs/container/core) and offers the default
 Vanilla OS Desktop experience with GNOME.
 
 ## Build

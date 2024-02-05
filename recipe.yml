@@ -1,5 +1,5 @@
-base: ghcr.io/vanilla-os/desktop:main
-name: Custom Vanilla Desktop
+base: ghcr.io/vanilla-os/core:main
+name: Vanilla OS XFCE Desktop
 id: vanilla-xfce
 labels:
   maintainer: self-maintained
