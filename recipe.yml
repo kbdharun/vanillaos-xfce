@@ -1,6 +1,6 @@
 base: ghcr.io/vanilla-os/desktop:main
 name: Custom Vanilla Desktop
-id: vanilla-custom
+id: vanilla-xfce
 labels:
   maintainer: self-maintained
 args:
@@ -13,31 +13,45 @@ modules:
   - lpkg --unlock
   - apt-get update
 
-# Put your custom actions behind this comment
-
-- name: example-packages
-  type: apt
-  source:
-    packages:
-    - vim
-
-- name: example-commands
-  type: shell
-  commands:
-  - echo Example output
+# Start custom actions
 
 - name: package-modules
   type: includes
   includes:
-    - modules/50-install-debs
-    - modules/80-set-image-abroot-config
+    - modules/00-vanilla-desktop-base
+    - modules/00-vanilla-backgrounds
+    - modules/00-vanilla-first-setup
+    - modules/00-vanilla-gnome-default-settings
+    - modules/00-vanilla-system-operator
+    - modules/00-vanilla-apx-gui
+    - modules/00-vanilla-tour
+    - modules/00-vanilla-sideload
+    - modules/00-vanilla-updates-utility
+    - modules/02-waydroid-modules
+    - modules/03-fswarn
+    - modules/10-vanilla-abroot-rollback-notifier
+    - modules/20-xfce-core
+    - modules/50-laptop-goodies
+    - modules/60-media
+    - modules/80-printers
+    - modules/90-3d-utils
+    - modules/100-accessibility
+    - modules/110-fonts
+    - modules/120-network
+    - modules/130-plymouth
+    - modules/131-plymouth-theme-vanilla
+    - modules/140-password
+    - modules/160-utilities
+    - modules/210-libs-extra
+    - modules/51-install-debs
+    - modules/81-set-image-abroot-config
 
 - name: firstsetup-default-session
   type: shell
   commands:
   - sed 's/Session=/Session=firstsetup/g' -i /usr/share/accountsservice/user-templates/administrator
   - sed 's/Session=/Session=firstsetup/g' -i /usr/share/accountsservice/user-templates/standard
-# Put your custom actions before this comment
+# End custom actions
 
 - name: cleanup
   type: shell

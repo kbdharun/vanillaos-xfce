@@ -1,0 +1,5 @@
+name: network
+type: apt
+source:
+  packages:
+  - network-manager-gnome

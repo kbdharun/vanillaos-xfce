@@ -1,0 +1,6 @@
+name: utilities
+type: apt
+source:
+  packages:
+  - zenity
+  - flatpak

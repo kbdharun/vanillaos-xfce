@@ -1,0 +1,5 @@
+name: xfce-core
+type: apt
+source:
+  packages:
+  - xfce4
