@@ -61,12 +61,6 @@ modules:
     - modules/210-libs-extra
     - modules/51-install-debs
     - modules/81-set-image-abroot-config
-
-- name: firstsetup-default-session
-  type: shell
-  commands:
-  - sed 's/Session=/Session=firstsetup/g' -i /usr/share/accountsservice/user-templates/administrator
-  - sed 's/Session=/Session=firstsetup/g' -i /usr/share/accountsservice/user-templates/standard
 # End custom actions
 
 - name: cleanup
