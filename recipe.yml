@@ -21,7 +21,6 @@ modules:
     - modules/00-vanilla-desktop-base
     - modules/00-vanilla-backgrounds
     - modules/00-vanilla-first-setup
-    - modules/00-vanilla-gnome-default-settings
     - modules/00-vanilla-system-operator
     - modules/00-vanilla-apx-gui
     - modules/00-vanilla-tour
