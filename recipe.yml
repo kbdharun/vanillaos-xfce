@@ -32,6 +32,11 @@ modules:
     - modules/50-install-debs
     - modules/80-set-image-abroot-config
 
+- name: firstsetup-default-session
+  type: shell
+  commands:
+  - sed 's/Session=/Session=firstsetup/g' -i /usr/share/accountsservice/user-templates/administrator
+  - sed 's/Session=/Session=firstsetup/g' -i /usr/share/accountsservice/user-templates/standard
 # Put your custom actions before this comment
 
 - name: cleanup
